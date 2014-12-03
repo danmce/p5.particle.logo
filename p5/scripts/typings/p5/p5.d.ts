@@ -18,7 +18,6 @@
         background(grayValue: number): void;
         background(color: string): void;
         background(red: number, green: number, blue: number, opacity?: number): void;
-        background(hue: number, saturation: string[], brightness: string[], opacity: string[]): void;
     }
 
     interface Image {
