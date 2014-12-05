@@ -78,6 +78,7 @@
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="scripts\app.ts" />
+    <TypeScriptCompile Include="scripts\typings\app\app.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="scripts\typings\p5\p5.d.ts" />
   </ItemGroup>
