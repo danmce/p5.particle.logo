@@ -59,6 +59,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\app.css">
+      <DependentUpon>app.less</DependentUpon>
+    </Content>
+    <Content Include="content\app.less" />
+    <Content Include="content\app.min.css">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
     <Content Include="index.html" />
     <Content Include="media\logo-clusta.jpg" />
     <Content Include="Web.config" />
@@ -68,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="content\app.css.map">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

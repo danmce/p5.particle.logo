@@ -31,13 +31,26 @@
         random(min: number, max: number): number;
 
         //Shape
+        //>2D Primitives
         ellipse(x: number, y: number, width: number, height: number): void;
+        line(x1: number, y1: number, x2: number, y2: number);
 
         //Color
         red(obj: any): number;
+        //>Setting
+        fill(color: string[]);
+        fill(red: number, green: number, blue: number, opacity?: number);
+        fill(red: string[], green: string[], blue: string[], opacity?: number);
+        stroke(color: string[]);
+        stroke(red: number, green: number, blue: number, opacity?: number);
+        stroke(red: string[], green: string[], blue: string[], opacity?: number);
+
 
         //Noise
-        noise();
+        noise(x: number, y: number, z: number);
+
+        //Time & Date
+        millis(): number;
     }
 
     export interface Image {

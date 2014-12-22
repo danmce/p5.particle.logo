@@ -1,18 +1,27 @@
 ﻿class Color {
-    constructor(red: number, green: number, blue: number, alpha?: number) { }
+    red: number;
+    green: number;
+    blue: number;
+    alpha: number;
+    constructor(red: number, green: number, blue: number, alpha?: number) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.alpha = alpha;
+    }
 }
 var drawing = (sketch: p5.context) => {
-    var limit = 500;
+    var limit = 3000;
     var hintImage: p5.Image;
     var particles = [];
 
-    var inactiveFill = new Color(255, 255, 255, 1);
-    var inactiveStroke = new Color(120, 120, 120, 1);
-    var activeFill = new Color(255, 0, 0, 1);
-    var activeStroke = new Color(120, 0, 0, 1);
+    var inactiveFill = new Color(60, 60, 60, 0);
+    var inactiveStroke = new Color(120, 120, 120, 0.5);
+    var activeFill = new Color(0, 0, 255, 1);
+    var activeStroke = new Color(0, 0, 120, 20);
 
     sketch.setup = function () {
-        sketch.createCanvas(1024, 768);
+        sketch.createCanvas(300, 331);
         sketch.noCursor();
         sketch.noStroke();
 
@@ -21,7 +30,7 @@ var drawing = (sketch: p5.context) => {
     }
 
     sketch.draw = function () {
-        sketch.background(0);
+        sketch.background(255);
         var position = sketch.createVector(sketch.random(hintImage.width), sketch.random(hintImage.height));
         sketch.ellipse(position.x, position.y, 8, 8);
 
@@ -87,11 +96,11 @@ var drawing = (sketch: p5.context) => {
             );
 
         sketch.fill(this.fill.r, this.fill.g, this.fill.b, alpha * 255);
-
-        var s = particles[1];
-
+        var s = particles[particles.length-1];
+        sketch.stroke(this.stroke.r, this.stroke.g, this.stroke.b, this.stroke.a);
         sketch.line(this.position.x, this.position.y, s.position.x, sketch.random(hintImage.width));
-        sketch.stroke(this.stroke.r, this.stroke.g, this.stroke.b, alpha * 255);
+        //sketch.stroke(this.stroke.r, this.stroke.g, this.stroke.b, alpha * 255);
+        sketch.noStroke();
         sketch.ellipse(
             this.position.x, this.position.y, this.diameter, this.diameter
             );
